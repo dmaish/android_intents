@@ -10,6 +10,8 @@ import android.widget.EditText;
 public class MainActivity extends AppCompatActivity {
     public final static String EXTRA_MESSAGE = "com.example.Docsapp.MESSAGE";
 
+    Intent intent;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -17,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void sendMessage(View view){
-        Intent intent = new Intent(this, DisplayMessageActivity.class);
+        intent = new Intent(this, DisplayMessageActivity.class);
         EditText editText = (EditText) findViewById(R.id.edit_message);
         String message = editText.getText().toString();
         intent.putExtra(EXTRA_MESSAGE, message);
